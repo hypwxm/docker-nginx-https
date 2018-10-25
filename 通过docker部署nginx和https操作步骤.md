@@ -1,6 +1,3 @@
-# docker-nginx-https
-# 通过docker部署nginx和https操作步骤
-
 ```shell
 $ cd /home
 ```

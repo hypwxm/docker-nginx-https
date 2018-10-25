@@ -1,0 +1,35 @@
+version: '2.2'
+services:
+  
+  nginx:
+    image: nginx
+    hostname: nginx-gateway
+    networks:
+      - nginx-gateway
+    container_name: nginx-gateway
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - type: bind
+        source: /home/nginx/conf.d/
+        target: /etc/nginx/conf.d/
+      - type: bind
+        source: /home/nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+      - type: bind
+        source: /home/nginx/conf.crt/
+        target: /etc/nginx/conf.crt/
+      - type: bind
+        source: /home/nginx/html/
+        target: /usr/share/nginx/html/
+      - type: bind
+        source: /home/logs/
+        target: /var/log/nginx/
+    restart: always
+    # command: ["nginx", "-g", "daemon off;"]
+        
+    
+networks:
+  nginx:
+    external: false
