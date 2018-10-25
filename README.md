@@ -47,7 +47,7 @@ docker build -t certbot:1.0 .
 
 7: 重启nginx
 ```shell
-docker restart gateway
+docker restart nginx-gateway
 ```
 
 
