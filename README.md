@@ -56,3 +56,15 @@ docker restart nginx-gateway
 ```shell
 /home/nginx/letsencrypt/renew.sh
 ```
+
+9: 通过linux的定时任务，配置定时更新
+```
+crontab -e
+```
+从给点的选项里面选一个自己习惯的编辑软件，打开定时任务文件
+在文件的末尾加上
+```txt
+0 0 1 * * /home/nginx/letsencrypt/renew.sh
+0 1 1 * * docker exec nginx-gateway nginx -s reload
+```
+每月一号定时更新证书，一小时后，重启nginx加载更新后的证书
