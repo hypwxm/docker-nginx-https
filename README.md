@@ -12,6 +12,9 @@ git clone https://github.com/hypwxm/docker-nginx-https.git
 ```shell
 mv docker-nginx-https nginx
 ```
+```shell
+mkdir /home/logs
+```
 
 2: 修改执行文件权限
 ```shell
