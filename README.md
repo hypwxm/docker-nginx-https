@@ -1,7 +1,9 @@
 # docker-nginx-https
 # 通过docker部署nginx和https操作步骤
 
+0: 注意
 * 一下操作请确保安装了docker和docker-compose
+* 修改/home/nginx/letencrypt下的renew.sh中的LIST=('域名1' '域名2')，email改成自己的
 
 1: 将所有文件clone到/home/nginx目录下
 
